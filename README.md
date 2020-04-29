@@ -1,4 +1,4 @@
-# SmartBrain - v2
+# Smart Brain App - Front End
 Final project for Udemy course
 
 1. Clone this repo
