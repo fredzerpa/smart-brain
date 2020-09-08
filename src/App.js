@@ -24,7 +24,7 @@ const particlesOptions = {
 const initialState = {
   input: '',
   imageUrl: '',
-  boxes: [{}],
+  boxes: [],
   route: 'signin',
   isSignedIn: false,
   user: {
@@ -70,7 +70,6 @@ class App extends Component {
         bottomRow: height - clarifaiFace.bottom_row * height,
       };
     });
-    console.log('Bouding Boxes:', boundingBoxes);
     return boundingBoxes;
   };
 
@@ -123,7 +122,6 @@ class App extends Component {
 
   render() {
     const { isSignedIn, imageUrl, route, boxes, user } = this.state;
-    console.log('Boxes State: ', boxes);
     return (
       <div className='App'>
         <Particles className='particles' params={particlesOptions} />
@@ -134,10 +132,7 @@ class App extends Component {
         {route === 'home' ? (
           <div>
             <Logo />
-            <Rank
-              name={user.name}
-              entries={user.entries}
-            />
+            <Rank name={user.name} entries={user.entries} />
             <ImageLinkForm
               onInputChange={this.onInputChange}
               onButtonSubmit={this.onButtonSubmit}
